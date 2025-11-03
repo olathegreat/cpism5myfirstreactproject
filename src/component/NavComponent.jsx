@@ -2,11 +2,17 @@ import React from "react";
 import "./NavComponent.css";
 
 
-function  NavComponent() { 
+function NavComponent(props) { 
+    const backgroundToDisplay = props.backgroundColor || "lightblue";
+
+
+    const signUpButtonFunction = () => {
+        alert("Sign up clicked!");
+    }
 
     return (
-        <nav>
-            <h1>New react project</h1>
+        <nav style={{background: backgroundToDisplay}}>
+            <h1>{props.username}</h1>
 
             <ul>
                 <li><a href="*">Home</a></li>
@@ -19,8 +25,9 @@ function  NavComponent() {
 
 
             <div className="nav-buttons">
-                <button className="button-no-bg">Login</button>
-                <button>Sign up</button>
+                <button className="button-no-bg" onClick={()=> alert("clicked!")}>Login</button>
+                <button onClick={signUpButtonFunction}>Sign up</button>
+                <div>{props.loginChecker }</div>
             </div>
         </nav>
             
