@@ -1,19 +1,20 @@
 import React from "react";
 import "./LoginForm.css";
-const LoginForm = () => {
+const LoginForm = (props) => {
 
   const onSubmitFunction = (e) => {
     e.preventDefault();
     alert("form submitted");
-
     // console.log("form has been submitted");
   }
+
+  
 
 
   return (
     <div className="login-form-body">
-      <h3>Login </h3>
-      <p>Type in your details to login</p>
+      <h3>{props.header} </h3>
+      <p>{ props.messageToDisplay}</p>
       <form onSubmit={onSubmitFunction}>
         <div>
           <label htmlFor="username">Username:</label>
