@@ -1,5 +1,6 @@
 import React from "react";
 import "./CardComponent.css";
+import { Link } from "react-router-dom";
 const CardComponent = (props) => {
   return (
     <div className="class-component-body">
@@ -10,7 +11,13 @@ const CardComponent = (props) => {
       <div className="card-content">
               <h3>{props.name}</h3>
               <p>{ props.description}</p>
-        <button onClick={()=>alert(`you have clicked ${props.name} card`)}>Visit my profile</button>
+              <button>
+                  <Link to={props.link}>
+                        Visit my profile
+                  </Link>
+                  
+              
+              </button>
       </div>
     </div>
   );
