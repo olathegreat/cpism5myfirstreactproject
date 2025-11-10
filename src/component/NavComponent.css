@@ -18,12 +18,16 @@ nav ul{
 nav  li{
     cursor: pointer;
 }   
-nav li:hover{
-    text-decoration: underline;
+nav a:hover{
+    color: grey
 }
 nav li a{
     color: white;
     text-decoration: none;
+    transition: all 0.8s ease;
+}
+nav a:hover{
+    color: grey
 }
 nav .nav-buttons{
     display: flex;
@@ -41,4 +45,7 @@ nav .nav-buttons .button-no-bg{
     background-color: transparent;
     color: white;
     border: 1px solid white;
+}
+nav h1{
+    cursor: pointer;
 }

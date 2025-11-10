@@ -1,8 +1,13 @@
 import React from 'react'
+import NavComponent from '../component/NavComponent'
 
 const ContactUsPage = () => {
-  return (
-    <div>ContactUsPage</div>
+    return (
+        <div>
+       
+      <NavComponent username ="Olarotimi"/>
+            <div>ContactUsPage</div>
+             </div>
   )
 }
 

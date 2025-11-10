@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./LoginForm.css";
 const LoginForm = (props) => {
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const onSubmitFunction = (e) => {
     e.preventDefault();
@@ -8,7 +11,28 @@ const LoginForm = (props) => {
     // console.log("form has been submitted");
   }
 
+  // useEffect(() => {
+  //   console.log("something new is happening");
+
+
+  // }); run when page is rendered and also when there is any change in the component
+
+
+  // useEffect(() => {
+  //   console.log("something new is happening");
+
+
+  // }, []); run once only when the page is rendered
+
   
+
+  useEffect(() => {
+    console.log("something new is happening");
+
+
+  }, [username]); //run when component is rendered and also when the parameter changes 
+
+
 
 
   return (
@@ -20,7 +44,13 @@ const LoginForm = (props) => {
           <label htmlFor="username">Username:</label>
           <input
            
-           onChange={()=>alert("user is now typing")}
+            onChange={(e) => {
+
+              setUsername(e.target.value);
+              console.log(username);
+              
+            }}
+            value={username}
           
             type="text"
             id="username"
@@ -31,6 +61,15 @@ const LoginForm = (props) => {
           <label htmlFor="password">Password:</label>
           <input
             // onChange={(e) => console.log("user is now typing")}
+               
+            onChange={(e) => {
+
+              setPassword(e.target.value);
+              console.log(password)
+              
+            }}
+           
+            value={password}
             type="password" id="password" name="password" required />
         </div>
         <button type="submit">Login</button>

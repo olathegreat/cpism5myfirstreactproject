@@ -1,9 +1,11 @@
 import React from "react";
 import "./NavComponent.css";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function NavComponent(props) { 
     const backgroundToDisplay = props.backgroundColor || "lightblue";
+    const navigate = useNavigate();
 
 
     const signUpButtonFunction = () => {
@@ -12,14 +14,12 @@ function NavComponent(props) {
 
     return (
         <nav style={{background: backgroundToDisplay}}>
-            <h1>{props.username}</h1>
+            <h1 onClick={()=>navigate("/")}>{props.username}</h1>
 
             <ul>
-                <li><a href="*">Home</a></li>
-                <li><a href="*">About</a></li>
-                <li><a href="*">Shop</a></li>
-                <li><a href="*">Blog</a></li>
-                <li><a href="*">Contact</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about-us">About Us</Link></li>
+                <li><Link to="/contact-us">Contact</Link></li>
                 
             </ul>
 
